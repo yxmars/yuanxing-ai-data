@@ -145,36 +145,6 @@
 
     .button:hover { filter: brightness(0.94); }
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      margin-top: 64px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: var(--line);
-    }
-
-    .stat {
-      padding: 22px 20px;
-      background: var(--paper);
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--accent);
-      font-size: 27px;
-      line-height: 1.2;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
     .section {
       padding: 82px 0;
       border-bottom: 1px solid var(--line);
@@ -378,7 +348,6 @@
     @media (max-width: 820px) {
       .nav-links { display: none; }
       .hero { padding: 78px 0 62px; }
-      .stats { grid-template-columns: repeat(2, 1fr); }
       .section { padding: 62px 0; }
       .section-grid { grid-template-columns: 1fr; gap: 24px; }
       .focus-grid { grid-template-columns: 1fr; }
@@ -389,9 +358,6 @@
     @media (max-width: 520px) {
       .wrap { width: min(100% - 28px, var(--max)); }
       .hero { padding-top: 58px; }
-      .stats { grid-template-columns: 1fr 1fr; }
-      .stat { padding: 18px 14px; }
-      .stat strong { font-size: 23px; }
       .project summary { padding: 18px; }
       .project-body { padding: 0 18px 18px; }
       .contact-panel { padding: 26px 22px; }
@@ -425,12 +391,6 @@
         <div class="hero-actions">
           <a class="button" href="#projects">查看代表项目</a>
           <a class="button secondary" href="mailto:412313882@qq.com">邮件联系</a>
-        </div>
-        <div class="stats" aria-label="关键数据">
-          <div class="stat"><strong>10年+</strong><span>数据与 AI 经验</span></div>
-          <div class="stat"><strong>500万+</strong><span>Mid-Train 数据刷新</span></div>
-          <div class="stat"><strong>70+</strong><span>训练数据质检能力</span></div>
-          <div class="stat"><strong>30人</strong><span>最大团队管理规模</span></div>
         </div>
       </div>
     </section>
