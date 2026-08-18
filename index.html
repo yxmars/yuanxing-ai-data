@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="袁星的个人主页，聚焦大模型训练数据策略、数据平台与 AI 工程。">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta property="og:title" content="袁星｜数据与 AI">
+  <meta property="og:description" content="大模型训练数据策略、数据平台与 AI 工程实践。">
+  <meta property="og:type" content="website">
+  <title>袁星｜数据与 AI</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --paper: #ffffff;
+      --ink: #17202a;
+      --muted: #65717e;
+      --line: #dfe4e8;
+      --accent: #245b78;
+      --accent-soft: #eaf1f5;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid rgba(36, 91, 120, 0.28);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(223, 228, 232, 0.8);
+      background: rgba(247, 248, 250, 0.92);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+    }
+
+    .brand {
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    main { overflow: hidden; }
+
+    .hero {
+      padding: 112px 0 82px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-lead {
+      max-width: 820px;
+      margin: 26px 0 0;
+      color: #45515e;
+      font-size: clamp(18px, 2.2vw, 22px);
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 9px 18px;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      color: #fff;
+      background: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .button.secondary {
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .button:hover { filter: brightness(0.94); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 64px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--line);
+    }
+
+    .stat {
+      padding: 22px 20px;
+      background: var(--paper);
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--accent);
+      font-size: 27px;
+      line-height: 1.2;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .section {
+      padding: 82px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 72px;
+    }
+
+    .section-label {
+      margin: 0;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    h2 {
+      margin: 0 0 24px;
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    p { margin: 0 0 16px; }
+
+    .about-copy {
+      max-width: 760px;
+      color: #45515e;
+      font-size: 18px;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .focus-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+    }
+
+    .focus-card h3 {
+      color: var(--accent);
+      font-size: 16px;
+    }
+
+    .focus-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline li {
+      display: grid;
+      grid-template-columns: 145px minmax(0, 1fr);
+      gap: 26px;
+      padding: 0 0 32px;
+    }
+
+    .timeline li:last-child { padding-bottom: 0; }
+
+    .period {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .role-meta {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .projects {
+      display: grid;
+      gap: 18px;
+    }
+
+    .project {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+    }
+
+    .project summary {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding: 22px 24px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .project summary::-webkit-details-marker { display: none; }
+
+    .project summary::after {
+      content: "+";
+      color: var(--accent);
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .project[open] summary::after { content: "−"; }
+
+    .project-title small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .project-body {
+      padding: 0 24px 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .project-body > p {
+      margin-top: 20px;
+      color: #45515e;
+    }
+
+    .project-body ul {
+      margin: 12px 0 0;
+      padding-left: 1.2em;
+    }
+
+    .project-body li { margin: 10px 0; }
+
+    .project-body strong { color: var(--accent); }
+
+    .education {
+      display: grid;
+      gap: 14px;
+    }
+
+    .education-item {
+      display: grid;
+      grid-template-columns: minmax(210px, 1fr) minmax(280px, 1.6fr);
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .education-item:first-child { border-top: 0; }
+
+    .education-item span { color: var(--muted); }
+
+    .contact-panel {
+      padding: 34px;
+      border-radius: 12px;
+      color: #fff;
+      background: var(--accent);
+    }
+
+    .contact-panel h2 { margin-bottom: 12px; }
+
+    .contact-panel p {
+      max-width: 680px;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      margin-top: 24px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .contact-links a { text-decoration: underline; text-underline-offset: 4px; }
+
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 820px) {
+      .nav-links { display: none; }
+      .hero { padding: 78px 0 62px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .section { padding: 62px 0; }
+      .section-grid { grid-template-columns: 1fr; gap: 24px; }
+      .focus-grid { grid-template-columns: 1fr; }
+      .timeline li { grid-template-columns: 1fr; gap: 5px; }
+      .education-item { grid-template-columns: 1fr; gap: 3px; }
+    }
+
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .hero { padding-top: 58px; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .stat { padding: 18px 14px; }
+      .stat strong { font-size: 23px; }
+      .project summary { padding: 18px; }
+      .project-body { padding: 0 18px 18px; }
+      .contact-panel { padding: 26px 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a class="brand" href="#top">袁星</a>
+      <div class="nav-links">
+        <a href="#about">关于</a>
+        <a href="#experience">经历</a>
+        <a href="#projects">项目</a>
+        <a href="#education">教育</a>
+        <a href="#contact">联系</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Data · AI · LLM</p>
+        <h1>以数据策略，驱动大模型与复杂业务持续进化。</h1>
+        <p class="hero-lead">袁星，百度数据与 AI 技术负责人。聚焦大模型训练数据、Reward / Verifier、模型效果闭环，以及大规模用户与时空数据平台建设。</p>
+        <div class="hero-actions">
+          <a class="button" href="#projects">查看代表项目</a>
+          <a class="button secondary" href="mailto:412313882@qq.com">邮件联系</a>
+        </div>
+        <div class="stats" aria-label="关键数据">
+          <div class="stat"><strong>10年+</strong><span>数据与 AI 经验</span></div>
+          <div class="stat"><strong>500万+</strong><span>Mid-Train 数据刷新</span></div>
+          <div class="stat"><strong>70+</strong><span>训练数据质检能力</span></div>
+          <div class="stat"><strong>30人</strong><span>最大团队管理规模</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap section-grid">
+        <p class="section-label">关于我</p>
+        <div>
+          <h2>从 PB 级数据底座，到大模型后训练闭环。</h2>
+          <p class="about-copy">在百度拥有 10年+ 数据与 AI 经验，具备从 PB 级大数据处理、用户 / 时空数据挖掘，到 LLM 大模型 Mid-Train / SFT / RL 训练数据、Reward / Verifier 及数据闭环建设的全链路能力，兼具数据技术深度、模型效果优化经验与团队管理能力。</p>
+          <div class="focus-grid">
+            <article class="focus-card">
+              <h3>大模型训练数据</h3>
+              <p>Mid-Train、SFT、RL 数据管线，Query Pipeline，数据画像、质量治理与配比优化。</p>
+            </article>
+            <article class="focus-card">
+              <h3>数据平台与挖掘</h3>
+              <p>用户理解、时空计算、全域 Session、数据仓库及实时特征服务。</p>
+            </article>
+            <article class="focus-card">
+              <h3>效果与组织</h3>
+              <p>Reward / Verifier、评测归因闭环，以及 10—30 人技术团队管理。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap section-grid">
+        <p class="section-label">工作经历</p>
+        <ol class="timeline">
+          <li>
+            <time class="period">2024.05—至今</time>
+            <div><h3>技术领域负责人（新12级）</h3><p class="role-meta">百度｜自然语言处理部 / 大模型算法部｜负责 15 人团队</p></div>
+          </li>
+          <li>
+            <time class="period">2022.01—2024.05</time>
+            <div><h3>高级技术经理（M2B）</h3><p class="role-meta">百度｜知识图谱部 / 数据与知识部｜负责 30 人团队</p></div>
+          </li>
+          <li>
+            <time class="period">2017.06—2022.01</time>
+            <div><h3>技术经理（M2A）</h3><p class="role-meta">百度｜大数据部｜负责 20 人团队</p></div>
+          </li>
+          <li>
+            <time class="period">2012.07—2017.06</time>
+            <div><h3>资深研发工程师（T6）</h3><p class="role-meta">百度｜大数据部｜负责 10 人团队</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap section-grid">
+        <p class="section-label">代表项目</p>
+        <div class="projects">
+          <details class="project" open>
+            <summary>
+              <span class="project-title"><strong>文心一言｜大模型通用后训练数据策略</strong><small>2023.07—至今</small></span>
+            </summary>
+            <div class="project-body">
+              <p>负责创作、问答、信息处理、多语言等通用场景的中后训练数据生产，支撑搜索、电商、百度云等大模型应用业务。</p>
+              <ul>
+                <li><strong>统一数据管线：</strong>建设 Mid-Train / SFT 数据与 Query Pipeline；完成 500万+ Mid-Train、180万中英高难指令及 40万+ SFT 数据生产，生产人力降低 80%。</li>
+                <li><strong>画像与质量治理：</strong>建立多维数据画像及配比治理体系；构建 Rule-based + Model-based 质检系统，沉淀 70+ 项质检能力。</li>
+                <li><strong>Reward / Verifier：</strong>设计三层 50+ 细粒度评价维度、Checklist 验证及采样策略；完成 10万+ RL 数据刷新，在 24 个评测集上取得 GSB 16:2:6，RL 较 SFT 提升 17pp。</li>
+                <li><strong>关键成果：</strong>支撑 ERNIE-5.1 参数规模由 2.4T 缩减至 800B，LMArena Text Arena 提升 23 名并位居国内第 1（2026.05），重点业务场景满意度提升 7.5pp。</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project">
+            <summary>
+              <span class="project-title"><strong>文心一格｜AI 绘画产品策略</strong><small>2022.05—2023.07</small></span>
+            </summary>
+            <div class="project-body">
+              <p>作为技术经理负责文生图产品策略与平台落地。</p>
+              <ul>
+                <li><strong>Prompt 理解与增强：</strong>融合 NLPC、NER、自定义词典和图库标签，完成关键词提取、语义扩展、内容补全与风格推荐。</li>
+                <li><strong>检索、分发与安全：</strong>建设图片、作品和创作者的多路召回与排序，并建立覆盖训练数据、用户输入和生成图片的风控体系。</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project">
+            <summary>
+              <span class="project-title"><strong>大数据 ToB｜时空态势感知与分析</strong><small>2021.01—2023.03</small></span>
+            </summary>
+            <div class="project-body">
+              <p>面向智慧城市 ToB / ToG 场景建设时空态势感知平台，为文旅、园区、社区和商圈提供人群与趋势洞察。</p>
+              <ul>
+                <li><strong>时空数据挖掘：</strong>融合搜索、点击、Feed、定位与互联网内容数据，完成事件识别、意图挖掘与情感分析。</li>
+                <li><strong>空间计算：</strong>设计“墨卡托投影 + 多层级网格 + Grid Group + Bitmap”索引，实现 AOI 实体去重、快速聚合与秒级分析。</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="project">
+            <summary>
+              <span class="project-title"><strong>大数据 ToC｜用户理解和用户数仓</strong><small>2012.07—2021.12</small></span>
+            </summary>
+            <div class="project-body">
+              <p>负责用户理解与用户数据体系建设，为搜索、推荐、广告、风控和用户画像提供统一数据与特征能力。</p>
+              <ul>
+                <li><strong>全域行为数据：</strong>基于 ID-Mapping 构建 Global Session，贯通跨终端、域内外、In-App、第三方及线下行为，基于 Lambda 架构提供秒级特征服务。</li>
+                <li><strong>行为与意图建模：</strong>构建多尺度 Session 序列，沉淀 100+ 商业特征，支撑 Feed、CTR / CVR、广告频控、个性化、反作弊和金融风控。</li>
+                <li><strong>数仓建设：</strong>面向多产品线海量日志完成采集、清洗、关联、聚合及数仓建模，统一指标口径并沉淀主题数据集与报表。</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="wrap section-grid">
+        <p class="section-label">教育背景</p>
+        <div class="education">
+          <div class="education-item"><h3>中国科学技术大学</h3><span>计算机专业｜硕士｜2009.09—2012.06</span></div>
+          <div class="education-item"><h3>合肥工业大学</h3><span>信息安全专业｜硕士｜2005.09—2009.07</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="contact-panel">
+          <h2>保持联系</h2>
+          <p>欢迎就大模型训练数据策略、数据平台建设、模型效果闭环与技术团队管理进行交流。</p>
+          <div class="contact-links">
+            <a href="mailto:412313882@qq.com">412313882@qq.com</a>
+            <a href="https://yxmars.github.io/yuanxing/">原个人主页</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year">2026</span> 袁星 · 数据与 AI</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
