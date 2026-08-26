@@ -432,7 +432,7 @@
         <p class="section-label">关于我</p>
         <div>
           <h2>从 PB 级数据底座，到大模型后训练闭环。</h2>
-          <p class="about-copy">在百度拥有 10年+ 数据与 AI 经验，具备从 PB 级大数据处理、用户 / 时空数据挖掘，到 LLM 大模型 Mid-Train / SFT / RL 训练数据、Reward / Verifier 及数据闭环建设的全链路能力，兼具数据技术深度、模型效果优化经验与团队管理能力。</p>
+          <p class="about-copy">在百度拥有 10 年+ 数据与 AI 经验，从大数据到人工智能业务，具备从 PB 级大数据处理、数据挖掘，到大模型训练数据合成、奖励系统构建的数据闭环建设全链路能力，兼具技术、业务与团队管理复合能力。</p>
           <div class="focus-grid">
             <article class="focus-card">
               <h3>大模型训练数据</h3>
@@ -457,19 +457,19 @@
         <ol class="timeline">
           <li>
             <time class="period">2024.05—至今</time>
-            <div><h3>技术领域负责人（新12级）</h3><p class="role-meta">百度｜自然语言处理部 / 大模型算法部｜负责 15 人团队</p></div>
+            <div><h3>技术领域负责人（新12级）</h3><p class="role-meta">百度｜基础模型研发部｜负责约 15 人团队</p></div>
           </li>
           <li>
             <time class="period">2022.01—2024.05</time>
-            <div><h3>高级技术经理（M2B）</h3><p class="role-meta">百度｜知识图谱部 / 数据与知识部｜负责 30 人团队</p></div>
+            <div><h3>高级技术经理（M2B）</h3><p class="role-meta">百度｜知识图谱部｜负责约 30 人团队</p></div>
           </li>
           <li>
             <time class="period">2017.06—2022.01</time>
-            <div><h3>技术经理（M2A）</h3><p class="role-meta">百度｜大数据部｜负责 20 人团队</p></div>
+            <div><h3>技术经理（M2A）</h3><p class="role-meta">百度｜大数据部｜负责约 20 人团队</p></div>
           </li>
           <li>
             <time class="period">2012.07—2017.06</time>
-            <div><h3>资深研发工程师（T6）</h3><p class="role-meta">百度｜大数据部｜负责 10 人团队</p></div>
+            <div><h3>资深研发工程师（T6）</h3><p class="role-meta">百度｜大数据部｜负责约 10 人团队</p></div>
           </li>
         </ol>
       </div>
@@ -481,28 +481,30 @@
         <div class="projects">
           <details class="project" open>
             <summary>
-              <span class="project-title"><strong>文心一言｜大模型通用后训练数据策略</strong><small>2023.07—至今</small></span>
+              <span class="project-title"><strong>文心一言｜大模型通用后训练数据与效果优化</strong><small>2023.07—至今</small></span>
             </summary>
             <div class="project-body">
-              <p>负责创作、问答、信息处理、多语言等通用场景的中后训练数据生产，支撑搜索、电商、百度云等大模型应用业务。</p>
+              <p>负责文心一言大模型在通用场景（覆盖创作、问答、信息处理、多语言等 Chat 型任务）的中后训练数据生产，提升通用文本模型在创意写作、重点业务与通用场景的核心能力，支持搜索、电商、百度云等大模型应用业务。</p>
               <ul>
-                <li><strong>统一数据管线：</strong>建设 Mid-Train / SFT 数据与 Query Pipeline；完成 500万+ Mid-Train、180万中英高难指令及 40万+ SFT 数据生产，生产人力降低 80%。</li>
-                <li><strong>画像与质量治理：</strong>建立多维数据画像及配比治理体系；构建 Rule-based + Model-based 质检系统，沉淀 70+ 项质检能力。</li>
-                <li><strong>Reward / Verifier：</strong>设计三层 50+ 细粒度评价维度、Checklist 验证及采样策略；完成 10万+ RL 数据刷新，在 24 个评测集上取得 GSB 16:2:6，RL 较 SFT 提升 17pp。</li>
-                <li><strong>关键成果：</strong>支撑 ERNIE-5.1 参数规模由 2.4T 缩减至 800B，LMArena Text Arena 提升 23 名并位居国内第 1（2026.05），重点业务场景满意度提升 7.5pp。</li>
+                <li><strong>统一训练数据生产管线：</strong>负责 Mid-Train / SFT 训练数据及 Query Pipeline 建设，统一创作、问答、信息处理、多语言等任务域的数据标准、生产流程与质量评估机制；完成 500 万+ Mid-Train 数据刷新、180 万中英高难指令补充、40 万+ SFT 数据生产，数据生产人力降低 80%，数据质量显著提升。</li>
+                <li><strong>数据画像分布治理：</strong>建立覆盖任务类型、能力维度、领域场景、原子指令、基础属性、难度及重点评测类别的数据画像体系，量化分析 Mid-Train / SFT / RL 训练数据分布与能力覆盖，识别长尾能力与数据缺口，驱动数据定向补充及配比优化。</li>
+                <li><strong>数据质量分析治理：</strong>构建 Rule-based + Model-based 数据质检体系，沉淀 70+ 项质检能力，覆盖推理—答案一致性、冗余、拒答、模糊指令等复杂语义问题，以及 Schema / 格式、安全合规、重复、乱码等基础质量问题，实现训练数据全链路自动化质量检测与治理。</li>
+                <li><strong>Reward / Verifier 与 RL 体系：</strong>主导全场景统一 Reward / Verifier 体系建设，设计高质、基础、低质三层共 50+ 个细粒度评价维度、Checklist 抽取与验证机制，以及 Reward 打分和数据采样策略，并建设配套评估集与 RL Data Pipeline；完成 10 万+ RL 数据刷新，相比原分场景 Verifier，在 24 个自动评测集上取得 GSB 16:2:6，RL 模型评估较 SFT Baseline 提升 17pp。</li>
+                <li><strong>数据驱动的模型效果迭代闭环：</strong>围绕创作、指令遵循、长文理解、事实性等基础能力及公司重点业务场景，建立“能力评测 → 问题归因 → 数据诊断 → 定向合成与治理 → 训练实验 → 效果验证”的迭代闭环；从数据覆盖、数据质量及监督信号三个层面定位瓶颈，持续优化训练数据供给与训练策略。</li>
+                <li><strong>关键成果：</strong>支撑 ERNIE-5.1 在模型参数规模大幅缩减（2.4T → 800B）的情况下，LMArena Text Arena 较上一代旗舰模型提升 23 个名次并位居国内模型第 1（2026.05）；创意写作表现接近 Gemini-3.1-Pro，指令遵循 AdvanceIF 72.3 分，超过 DeepSeek-V4-Pro，公司重点业务场景评估满意度提升 7.5pp。</li>
               </ul>
             </div>
           </details>
 
           <details class="project" open>
             <summary>
-              <span class="project-title"><strong>文心一格｜AI 绘画产品策略</strong><small>2022.05—2023.07</small></span>
+              <span class="project-title"><strong>文心一格｜AI 绘画产品研发</strong><small>2022.05—2023.07</small></span>
             </summary>
             <div class="project-body">
-              <p>作为技术经理负责文生图产品策略与平台落地。</p>
+              <p>作为技术经理负责产品策略与平台落地。文心一格是百度推出的 AI 艺术与创意辅助平台（业界首个），基于文生图技术帮助用户完成图片创作、灵感探索与作品分享。</p>
               <ul>
-                <li><strong>Prompt 理解与增强：</strong>融合 NLPC、NER、自定义词典和图库标签，完成关键词提取、语义扩展、内容补全与风格推荐。</li>
-                <li><strong>检索、分发与安全：</strong>建设图片、作品和创作者的多路召回与排序，并建立覆盖训练数据、用户输入和生成图片的风控体系。</li>
+                <li><strong>Prompt 理解与增强：</strong>搭建面向文生图场景的 Query 理解链路，融合 NLP 提取、自定义词典和图库标签数据，完成关键词提取、标签生成及语义扩展；针对短文本、人物和艺术风格等场景设计内容补全策略，并通过规则与 FastText 模型结合实现风格推荐。</li>
+                <li><strong>内容检索、分发与安全治理：</strong>建设覆盖图片、作品和创作者的检索推荐能力，利用标签共现、词向量技术实现关键词、标题、标签和用户维度的多路召回；结合相关性、内容质量、互动热度、发布时间及用户行为进行排序，支撑创作阶段的联想图推荐、搜索结果优化和首页瀑布流分发。建立贯穿训练数据、用户输入和生成图片的风控体系，保障内容合规。</li>
               </ul>
             </div>
           </details>
@@ -512,10 +514,10 @@
               <span class="project-title"><strong>大数据 ToB｜时空态势感知与分析</strong><small>2021.01—2023.03</small></span>
             </summary>
             <div class="project-body">
-              <p>面向智慧城市 ToB / ToG 场景建设时空态势感知平台，为文旅、园区、社区和商圈提供人群与趋势洞察。</p>
+              <p>作为技术经理，面向智慧城市 ToB / ToG 场景建设时空态势感知与分析平台，融合百度生态、互联网及客户数据，提供区域人口画像、人口流动、热点事件、群体意图、趋势变化等多维态势洞察，支撑文旅、园区、社区、商圈等行业的数据分析与决策。</p>
               <ul>
-                <li><strong>时空数据挖掘：</strong>融合搜索、点击、Feed、定位与互联网内容数据，完成事件识别、意图挖掘与情感分析。</li>
-                <li><strong>空间计算：</strong>设计“墨卡托投影 + 多层级网格 + Grid Group + Bitmap”索引，实现 AOI 实体去重、快速聚合与秒级分析。</li>
+                <li><strong>时空大数据挖掘：</strong>构建用户画像、热点事件、用户关注 / 意图、常驻 / 到访及流入流出等数据策略，融合搜索、浏览点击、Feed 流、定位及互联网内容数据，通过 NLP / 数据挖掘进行事件识别、主题分类、意图挖掘与情感分析；建立“用户—行为—内容—时间—空间”关联体系，并按小时、天、周等粒度沉淀时空主题数据。</li>
+                <li><strong>空间计算与数据架构：</strong>针对任意 AOI 实时查询及实体跨网格重复统计问题，设计“墨卡托投影 + 多层级网格 + Grid Group + Bitmap”索引方案，通过离线预聚合与在线索引匹配实现实体去重和快速聚合；打通“多源数据接入 → 策略挖掘 → 时空关联 → 离线计算 → 在线存储与服务”链路，支撑区域态势秒级分析。</li>
               </ul>
             </div>
           </details>
@@ -525,11 +527,12 @@
               <span class="project-title"><strong>大数据 ToC｜用户理解和用户数仓</strong><small>2012.07—2021.12</small></span>
             </summary>
             <div class="project-body">
-              <p>负责用户理解与用户数据体系建设，为搜索、推荐、广告、风控和用户画像提供统一数据与特征能力。</p>
+              <p>作为技术负责人，负责百度大数据 ToC 用户理解与用户数据体系建设，围绕全域用户行为打通、实时 Session / 特征计算、用户行为与意图建模、用户数仓建设，为搜索、推荐、广告、风控及用户画像提供统一的数据与特征能力。</p>
               <ul>
-                <li><strong>全域行为数据：</strong>基于 ID-Mapping 构建 Global Session，贯通跨终端、域内外、In-App、第三方及线下行为，基于 Lambda 架构提供秒级特征服务。</li>
-                <li><strong>行为与意图建模：</strong>构建多尺度 Session 序列，沉淀 100+ 商业特征，支撑 Feed、CTR / CVR、广告频控、个性化、反作弊和金融风控。</li>
-                <li><strong>数仓建设：</strong>面向多产品线海量日志完成采集、清洗、关联、聚合及数仓建模，统一指标口径并沉淀主题数据集与报表。</li>
+                <li><strong>全域用户行为数据打通：</strong>基于 ID-Mapping 构建 Global Session 全域用户行为数据，贯通同一用户在跨终端、百度域内外、In-App、第三方及线下场景的行为数据，统一重建用户全局行为序列，形成覆盖实时、小时、天、周、月等多时间尺度的用户状态与行为特征体系，基于 Lambda 架构提供秒级特征服务。</li>
+                <li><strong>用户行为建模与意图挖掘：</strong>构建 8H Session 实时、1 天、3 天短期、7 天长期多尺度行为序列，融合浏览、广告点展、视频及交互等行为，打通自然结果 / 广告、列表页 / 详情页场景；基于 RFM 建模用户行为质量，沉淀 100+ 商业特征，支撑 Feed 推荐、CTR / CVR 预估、广告频控、用户个性化、反作弊及金融风控等场景。</li>
+                <li><strong>用户搜索数据建设：</strong>建设百度用户搜索行为数据流，对搜索行为建模，进行 Session 切分、满意点击、点击权值计算，作为反馈信号用于搜索结果排序优化。</li>
+                <li><strong>用户数据仓库 ETL / 报表建设：</strong>面向搜索、贴吧、地图、网盘等多产品线 PB 级海量用户日志，负责数据采集、清洗、关联、聚合及数仓建模，统一数据与指标口径，沉淀用户主题数据集及多维分析报表，支撑用户行为分析、用户画像及业务运营决策。</li>
               </ul>
             </div>
           </details>
@@ -542,7 +545,7 @@
         <p class="section-label">教育背景</p>
         <div class="education">
           <div class="education-item"><h3>中国科学技术大学</h3><span>计算机专业｜硕士｜2009.09—2012.06</span></div>
-          <div class="education-item"><h3>合肥工业大学</h3><span>信息安全专业｜硕士｜2005.09—2009.07</span></div>
+          <div class="education-item"><h3>合肥工业大学</h3><span>信息安全专业｜本科｜2005.09—2009.07</span></div>
         </div>
       </div>
     </section>
@@ -554,6 +557,7 @@
           <p>欢迎就大模型训练数据策略、数据平台建设、模型效果闭环与技术团队管理进行交流。</p>
           <div class="contact-links">
             <a href="mailto:412313882@qq.com">412313882@qq.com</a>
+            <a href="https://yxmars.github.io/yuanxing-ai-data/">个人主页</a>
           </div>
         </div>
       </div>
